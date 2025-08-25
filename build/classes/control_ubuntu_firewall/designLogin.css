@@ -1,0 +1,158 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 12, 2024, 8:34:51 PM
+    Author     : ACER
+*/
+
+.bg {
+    -fx-background-color: #ff820c;
+}
+
+.signin_form {
+    -fx-background-color: white;
+    -fx-text-inner-color: #fff;
+    -fx-border-color: black;
+    -fx-border-width: 1px; /* Viền 1px đều 4 cạnh */
+    -fx-border-radius: 4px; /* Bo góc, tùy chọn */
+    -fx-padding: 5px; /* Tăng padding cho đẹp */
+    -fx-text-fill: #fff; /* Thay vì -fx-text-inner-color (đã deprecated) */
+    -fx-font-size: 13px;
+}
+
+.bg-form {
+    -fx-background-color: white;
+}
+
+.bg-pane {
+    -fx-background-color: linear-gradient(
+        to right,
+        #000000,
+        #1a1a1a,
+        #0077ff
+    );
+}
+
+.close {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close:hover {
+    -fx-background-color: #ff5151;
+}
+
+.minimize {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.minimize:hover {
+    -fx-background-color: #ff5151;
+}
+
+.textfield {
+    -fx-background-color: transparent;
+    -fx-text-inner-color: #fff;
+    -fx-border-color: black;
+    -fx-border-width: 1px; /* Viền 1px đều 4 cạnh */
+    -fx-border-radius: 4px; /* Bo góc, tùy chọn */
+    -fx-padding: 5px; /* Tăng padding cho đẹp */
+    -fx-text-fill: black; /* Thay vì -fx-text-inner-color (đã deprecated) */
+    -fx-font-size: 13px;
+}
+
+
+.textfield:focused {
+    -fx-border-color: #89CFF0; /* Màu xanh nhạt (light blue) */
+    -fx-border-width: 2px;      /* Viền to hơn để nổi bật */
+    -fx-border-radius: 4px;     /* Giữ bo góc giống bình thường */
+    -fx-background-color: rgba(137, 207, 240, 0.1); /* Nền xanh nhạt mờ khi focus (tuỳ chọn) */
+}
+
+.connect-btn {
+    -fx-background-color: linear-gradient(to bottom right, #000000, #0077ff);
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.connect-btn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #0077ff, #00ffff);
+}
+
+.hyperlink{
+    -fx-underline: false;
+    -fx-text-fill: #fb6363;
+    -fx-border-width: 0px;
+    -fx-border-color: transparent;
+}
+
+.hyperlink:hover{
+    -fx-text-fill: #ff3f3f;
+}
+
+.signup-btn{
+    -fx-background-color: linear-gradient(to bottom right, #3e785c, #399a73);
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    
+}
+
+.signup-btn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #4d9a76, #45b796);
+}
+
+.card {
+    -fx-background-color: white;                /* Nền trắng */
+    -fx-border-color: black;                    /* Viền đen */
+    -fx-border-width: 2;                        /* Độ dày viền */
+    -fx-border-radius: 12;                      /* Bo góc viền */
+    -fx-background-radius: 12;                  /* Bo góc nền */
+    -fx-padding: 16;                            /* Padding */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 4); /* Đổ bóng nhẹ */
+    -fx-max-width: 300px; /* Thuộc tính này cần xử lý bên trong mã Java nếu không áp dụng được */
+}
+
+
+/* Add these styles for connection status indicators */
+.status-disconnected {
+    -fx-text-fill: #e74c3c;  /* Red color for disconnected state */
+    -fx-font-weight: bold;
+}
+
+.status-connecting {
+    -fx-text-fill: #f39c12;  /* Orange color for connecting state */
+    -fx-font-weight: bold;
+}
+
+.status-connected {
+    -fx-text-fill: #2ecc71;  /* Green color for connected state */
+    -fx-font-weight: bold;
+}
+
+/* Style for the progress indicator */
+.connection-progress {
+    -fx-progress-color: #3498db;  /* Blue color for the progress indicator */
+}
+
+/* Style for the progress indicator when connecting */
+.connection-progress-connecting {
+    -fx-progress-color: #f39c12;  /* Orange color when connecting */
+}
+
+/* Style for the progress indicator when connected */
+.connection-progress-connected {
+    -fx-progress-color: #2ecc71;  /* Green color when connected */
+}
+
+/* Style for the progress indicator when failed */
+.connection-progress-failed {
+    -fx-progress-color: #e74c3c;  /* Red color when failed */
+}
+

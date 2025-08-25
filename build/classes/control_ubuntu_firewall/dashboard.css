@@ -1,0 +1,652 @@
+.left-menu {
+    -fx-background-color: #000000;
+}
+
+.up-menu {
+    -fx-background-color: #00060f;
+}
+
+.user-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.user-button:hover {
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #3399ff,
+        #00ccff,
+        #33ccff
+    );
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    
+    /* Hiệu ứng đổ bóng khi hover mạnh hơn */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.3, 0, 4);
+}
+
+.nav_btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size:12px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.nav_btn:hover{
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #3399ff,
+        #00ccff,
+        #33ccff
+    );
+}
+
+.nav_btn:focused {
+    -fx-background-color: #2e2e2e; /* hoặc để transparent nếu không muốn */
+    -fx-text-fill: #ffffff;
+    
+    /* Viền bên trái */
+    -fx-border-color: #3399ff; /* Màu viền bên trái */
+    -fx-border-width: 0 0 0 4px; /* Trên - Phải - Dưới - Trái */
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5); /* Đổ bóng */
+    -fx-padding: 10px;
+}
+
+.card2 {
+    -fx-background-color: white;
+    -fx-border-color: #3399ff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5); /* Đổ bóng */
+    -fx-padding: 5px;
+}
+
+.bg {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Kiểu dáng ToggleButton */
+.rounded-toggle {
+    -fx-background-color: #ddd; /* Màu nền xám khi tắt */
+    -fx-border-color: gray; /* Viền xám khi tắt */
+    -fx-border-radius: 50px; /* Giữ bo góc */
+    -fx-background-radius: 50px;
+    -fx-padding: 5px 35px 5px 5px;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.3s ease-in-out;
+}
+
+/* Khi bật: đổi màu viền và nền sang xanh dương nhạt */
+.rounded-toggle:selected {
+    -fx-background-color: #4CAF50; /* Màu xanh dương nhạt */
+    -fx-border-color: #64B5F6; /* Viền xanh dương */
+    -fx-alignment: center-right;
+}
+
+/* Chấm tròn di chuyển */
+.rounded-toggle::before {
+    -fx-shape: "M 0 0 L 20 0 L 20 20 L 0 20 Z"; /* Tạo hình tròn */
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+    -fx-translate-x: 5px; /* Vị trí ban đầu */
+    -fx-transition: translateX 0.3s ease-in-out;
+}
+
+/* Khi bật, chấm tròn di chuyển sang phải */
+.rounded-toggle:selected::before {
+    -fx-translate-x: 25px;
+}
+
+.toggle-on {
+    -fx-background-color: #4CAF50;
+    -fx-border-color: #388E3C;
+}
+
+.toggle-off {
+    -fx-background-color: #F44336;
+    -fx-border-color: #D32F2F;
+}
+
+.exit {
+    -fx-background-color: red;
+    -fx-text-fill: white; /* Chữ trắng cho dễ nhìn */
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+    -fx-transition: all 0.3s ease;
+}
+
+.exit:hover {
+    -fx-background-color: darkred; /* Màu tối hơn khi hover */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.label-blue {
+    -fx-background-color: #2196F3;  /* Màu xanh dương */
+    -fx-text-fill: white;          /* Chữ trắng */
+    -fx-padding: 4px 6px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;    /* Bo góc */
+}
+.label-blue:hover {
+    -fx-background-color: #1976D2; /* Tối hơn khi hover */
+}
+.edit-button {
+    -fx-background-color: #ffb508;
+    -fx-text-fill: white; 
+    -fx-padding: 4px 6px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+}
+
+.edit-button:hover {
+    -fx-background-color: #e6a100; /* Màu cam sậm hơn khi hover */
+}
+
+/* Style cho card tài khoản người dùng */
+.user-account-card {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-padding: 15px;
+    -fx-alignment: center;
+    -fx-min-width: 180px;
+    -fx-max-width: 220px;
+    -fx-spacing: 10px;
+}
+
+.user-account-card:hover {
+    -fx-border-color: #3399ff;
+    -fx-effect: dropshadow(gaussian, rgba(51, 153, 255, 0.3), 12, 0, 0, 5);
+    -fx-transition: all 0.3s ease;
+}
+
+/* Style cho username */
+.username-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px 0;
+}
+
+/* Style cho user role */
+.role-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-padding: 3px 8px;
+    -fx-background-radius: 4px;
+}
+
+.admin-role {
+    -fx-background-color: #F44336;
+}
+
+.current-user-role {
+    -fx-background-color: #4CAF50;
+}
+
+.normal-role {
+    -fx-background-color: #2196F3;
+}
+
+/* Style cho nút Edit */
+.edit-button {
+    -fx-background-color: #ffb508;
+    -fx-text-fill: white; 
+    -fx-padding: 6px 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+
+
+.detail-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 3 8;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+}
+
+.detail-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Style cho nút làm mới */
+.refresh-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+/* Style cho nút xuất logs */
+.export-button {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.export-button:hover {
+    -fx-background-color: #d35400;
+}
+
+/* Style cho tiêu đề phần */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Style cho bảng logs */
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: #ecf0f1;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+/* Sửa style cho hàng được chọn để giữ màu chữ đen */
+.table-row-cell:selected {
+    -fx-background-color: #d6eaf8;
+}
+
+/* Đảm bảo text trong cell luôn đen khi được chọn */
+.table-row-cell:selected > .table-cell {
+    -fx-text-fill: black;
+}
+
+.table-row-cell.allow {
+    -fx-background-color: rgba(46, 204, 113, 0.1); /* Xanh lá nhạt */
+}
+
+.table-row-cell.block {
+    -fx-background-color: rgba(231, 76, 60, 0.1); /* Đỏ nhạt */
+}
+
+.table-row-cell.audit {
+    -fx-background-color: rgba(241, 196, 15, 0.1); /* Vàng nhạt */
+}
+
+/* Khi hover hoặc chọn, làm đậm màu nền nhưng giữ màu chữ */
+.table-row-cell.allow:hover, .table-row-cell.allow:selected {
+    -fx-background-color: rgba(46, 204, 113, 0.2);
+}
+
+.table-row-cell.block:hover, .table-row-cell.block:selected {
+    -fx-background-color: rgba(231, 76, 60, 0.2);
+}
+
+.table-row-cell.audit:hover, .table-row-cell.audit:selected {
+    -fx-background-color: rgba(241, 196, 15, 0.2);
+}
+
+/* Đảm bảo text trong cell luôn đen khi được chọn, bất kể loại hàng */
+.table-row-cell.allow:selected > .table-cell,
+.table-row-cell.block:selected > .table-cell,
+.table-row-cell.audit:selected > .table-cell {
+    -fx-text-fill: black;
+}
+
+/* ... existing code ... */
+
+/* Style cho các bộ lọc ComboBox */
+.filter-combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+.filter-combo-box:hover {
+    -fx-border-color: #3399ff;
+}
+
+/* Style đơn giản cho dropdown menu */
+.filter-combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+}
+
+/* Style cho các item trong ComboBox */
+.filter-combo-box .list-cell {
+    -fx-padding: 5px 10px;
+}
+
+/* Style khi chọn item */
+.filter-combo-box .list-view .list-cell:filled:selected {
+    -fx-background-color: #3399ff;
+    -fx-text-fill: white;
+}
+
+/* Style cho ô tìm kiếm */
+.search-field {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px 10px;
+}
+
+.search-field:focused {
+    -fx-border-color: #3399ff;
+}
+
+
+.bg {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Style cho checkbox logging */
+.logging-checkbox {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.logging-checkbox .box {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 3px;
+}
+
+.logging-checkbox:selected .box {
+    -fx-background-color: #4CAF50;
+    -fx-border-color: #4CAF50;
+}
+
+.logging-checkbox:selected .mark {
+    -fx-background-color: white;
+}
+
+.logging-checkbox:hover .box {
+    -fx-border-color: #3399ff;
+}
+
+/* Kiểu dáng ToggleButton */
+.rounded-toggle {
+    -fx-background-color: #ddd; /* Màu nền xám khi tắt */
+    -fx-border-color: gray /* Viền xám khi tắt */
+    /* ... rest of existing code ... */
+}
+
+/* Kiểu cho nút thêm quy tắc */
+.button-primary {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #1976D2;
+}
+
+/* Kiểu cho nút lưu */
+.button-success {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button-success:hover {
+    -fx-background-color: #388E3C;
+}
+
+/* Improve the delete button style */
+.button-danger {
+    -fx-background-color: #F44336;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 11px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.button-danger:hover {
+    -fx-background-color: #D32F2F;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
+}
+
+.button-danger:pressed {
+    -fx-background-color: #B71C1C;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+}
+
+/* Kiểu cho tiêu đề phần */
+.section-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 5 0;
+}
+
+/* Style cho các nút hành động */
+.action-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-padding: 6px 12px;
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Style cho bảng quy tắc */
+.rule-table {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 5px;
+}
+
+/* Style cho form quy tắc */
+.rule-form {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 5px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+/* Style cho tiêu đề form */
+.form-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Style cho nút lưu */
+.save-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.save-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+/* Style cho nút cập nhật */
+.update-button {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.update-button:hover {
+    -fx-background-color: #e67e22;
+}
+
+/* Style cho nút hủy */
+.cancel-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Style cho nút sửa */
+.edit-button {
+    -fx-background-color: #ffb508;
+    -fx-text-fill: white; 
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.edit-button:hover {
+    -fx-background-color: #e6a100;
+}
+
+.card3 {
+    -fx-background-color: linear-gradient(
+        to right,
+        #000000,
+        #1a1a1a,
+        #0077ff
+    );
+    -fx-text-fill: white;
+}
+
+/* Style cho form quy tắc */
+.rule-form {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 5px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+/* Style cho checkbox log */
+.check-box {
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 3px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #4CAF50;
+    -fx-border-color: #4CAF50;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:hover .box {
+    -fx-border-color: #3399ff;
+}
+
+/* Style cho ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+.combo-box:hover {
+    -fx-border-color: #3399ff;
+}
+
+/* Style cho TextField */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px 10px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3399ff;
+}
+
+/* Terminal styles */
+.terminal-output {
+    -fx-font-family: "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-control-inner-background: #000000;
+}
+
+.terminal-output .content {
+    -fx-background-color: #000000;
+}
+
+.terminal-output .scroll-pane {
+    -fx-background-color: #000000;
+}
+
+.terminal-output .scroll-bar:vertical {
+    -fx-background-color: #333333;
+}
+
+.terminal-output .scroll-bar:vertical .thumb {
+    -fx-background-color: #666666;
+}

@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="945.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control_ubuntu_firewall.DashBoardController">
+    <children>
+        <AnchorPane layoutX="15.0" layoutY="15.0" prefHeight="622.0" prefWidth="945.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutX="373.0" layoutY="154.0" prefHeight="34.0" prefWidth="945.0" styleClass="bg-pane" stylesheets="@designLogin.css" AnchorPane.bottomAnchor="588.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="signin_close1" layoutX="899.0" layoutY="4.0" mnemonicParsing="false" onAction="#signUp_Close" prefHeight="24.0" prefWidth="45.0" styleClass="close" stylesheets="@designLogin.css" textFill="#fffbfb">
+                            <graphic>
+                                <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.2em" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="signin_minimize1" layoutX="855.0" layoutY="5.0" mnemonicParsing="false" onAction="#signUp_minimize" prefHeight="24.0" prefWidth="46.0" styleClass="minimize" stylesheets="@designLogin.css">
+                            <graphic>
+                                <FontAwesomeIcon fill="WHITE" glyphName="MINUS" size="1.2em" />
+                            </graphic>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="menu" layoutX="14.0" layoutY="28.8" prefHeight="593.0" prefWidth="171.0" styleClass="left-menu" stylesheets="@designLogin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="774.0" AnchorPane.topAnchor="29.0">
+                    <children>
+                        <AnchorPane layoutX="2.0" layoutY="-26.0" prefHeight="30.0" prefWidth="168.0" styleClass="user-button" stylesheets="@designLogin.css">
+                            <children>
+                                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="9.0" layoutY="21.0" size="1.5em" text="" wrappingWidth="28.799999999999955" />
+                                <AnchorPane layoutX="23.0" layoutY="6.0" prefHeight="20.0" prefWidth="15.0">
+                                    <children>
+                                        <Label fx:id="userLabel" layoutX="14.6" layoutY="0.8" prefHeight="18.0" prefWidth="122.0" text="User name" textAlignment="JUSTIFY" textFill="WHITE" AnchorPane.bottomAnchor="0.8000000000000007" AnchorPane.leftAnchor="14.6" AnchorPane.rightAnchor="-120.99999999999999" AnchorPane.topAnchor="0.8">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                        
+                        
+                        
+                        <Button fx:id="tong_quan" layoutY="44.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Tổng quan" />
+                        <Label layoutX="8.0" layoutY="18.0" prefHeight="18.0" prefWidth="158.0" text="System" textFill="WHITE">
+                            <font>
+                                <Font name="Times New Roman" size="15.0" />
+                            </font>
+                        </Label>
+                        <Line endX="66.40000915527344" endY="-3.814697265625E-6" layoutX="104.0" layoutY="42.0" startX="-104.00001525878906" startY="-3.814697265625E-6" stroke="#797676" />
+                        <Button fx:id="tai_khoan" layoutY="77.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Tài khoản" />
+                        <Button fx:id="logs" layoutX="-2.0" layoutY="266.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Logs" />
+                        <Button fx:id="qldv_menu" layoutX="-2.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Quản lý kết nối" />
+                        <Label layoutX="8.0" layoutY="182.0" prefHeight="18.0" prefWidth="158.0" text="Firewall" textFill="WHITE">
+                            <font>
+                                <Font name="Times New Roman" size="15.0" />
+                            </font>
+                        </Label>
+                        <Line endX="66.40000915527344" endY="-3.814697265625E-6" layoutX="104.0" layoutY="206.0" startX="-104.00001525878906" startY="-3.814697265625E-6" stroke="#797676" />
+                        <Button fx:id="bang_quy_tac_menu" layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Bảng quy tắc" />
+                        <Button fx:id="signOutButton" layoutX="14.0" layoutY="543.0" mnemonicParsing="false" onAction="#signOut" prefHeight="35.0" prefWidth="23.0" styleClass="exit" stylesheets="@dashboard.css">
+                            <graphic>
+                                <FontAwesomeIcon fx:id="sign_out" glyphName="SIGN_OUT" selectionFill="#f4f4f4" size="2em" styleClass="sign_out" text="" textAlignment="CENTER" wrappingWidth="19.657193183898926" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="terminal" layoutX="1.0" layoutY="103.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Terminal" />
+                        <Button fx:id="service_ssh" layoutX="-3.0" layoutY="429.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Service Logs" />
+                        <Button fx:id="service_ftp" layoutX="-3.0" layoutY="376.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Quản lý dịch vụ" />
+                        <Label layoutX="7.0" layoutY="345.0" prefHeight="18.0" prefWidth="158.0" text="Service" textFill="WHITE">
+                            <font>
+                                <Font name="Times New Roman" size="15.0" />
+                            </font>
+                        </Label>
+                        <Line endX="66.40000915527344" endY="-3.814697265625E-6" layoutX="103.0" layoutY="369.0" startX="-104.00001525878906" startY="-3.814697265625E-6" stroke="#797676" />
+                        <Button fx:id="service_http" layoutX="-3.0" layoutY="403.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="24.0" prefWidth="171.0" styleClass="nav_btn" stylesheets="@dashboard.css" text="Dịch vụ thịnh hành" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="all_firewall_anchor" layoutX="170.4" layoutY="28.8" prefHeight="593.0" prefWidth="775.0" styleClass="bg" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+                    <children>
+                        <AnchorPane fx:id="firewall_anchor" prefHeight="593.0" prefWidth="775.0" styleClass="bg" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label layoutX="13.0" layoutY="10.0" text="Firewall">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <ToggleButton fx:id="firewallToggle" layoutX="81.0" layoutY="7.0" minWidth="15.0" mnemonicParsing="false" onAction="#toggleFirewall" prefHeight="30.0" prefWidth="29.0" styleClass="rounded-toggle" stylesheets="@dashboard.css" />
+                                <Line endX="657.6000366210938" endY="-3.814697265625E-6" layoutX="117.0" layoutY="42.0" startX="-117.00000762939453" startY="-3.814697265625E-6" stroke="#797676" />
+                                <AnchorPane fx:id="firewallContent" layoutX="158.0" layoutY="42.4" prefHeight="551.0" prefWidth="775.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
+                                    <children>
+                                        <AnchorPane fx:id="qldv_firewall" layoutY="0.8" prefHeight="551.0" prefWidth="775.0" visible="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                                            <children>
+                                                <AnchorPane fx:id="anchor_table" layoutX="13.0" layoutY="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="534.0" prefWidth="751.0" styleClass="card" stylesheets="@dashboard.css">
+                                                    <children>
+                                                        <TableView fx:id="appTable" fixedCellSize="0.0" layoutX="45.6" layoutY="75.2" prefHeight="262.0" prefWidth="683.0" AnchorPane.bottomAnchor="207.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="65.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="colAppName" prefWidth="248.79992830753326" text="Dịch vụ/Cổng/Giao Thức" />
+                                                                <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="212.800048828125" text="Trạng thái" />
+                                                                <TableColumn fx:id="colAction" prefWidth="199.99990844726562" text="Chặn/Cho phép" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <HBox alignment="CENTER_LEFT" layoutX="42.0" layoutY="22.0" spacing="10.0">
+                                                            <children>
+                                                                <Label styleClass="section-title" text="Quản lý kết nối">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Region HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="reloadButton1" mnemonicParsing="false" onAction="#reloadFirewall" styleClass="action-button" text="Reload Firewall">
+                                                                    <graphic>
+                                                                        <FontAwesomeIcon glyphName="REFRESH" />
+                                                                    </graphic>
+                                                                </Button>
+                                                            </children>
+                                                        </HBox>
+                                                        <AnchorPane fx:id="serviceFormPane" layoutX="67.0" layoutY="337.0" prefHeight="154.0" prefWidth="585.0" styleClass="rule-form">
+                                                            <children>
+                                                                <Label layoutX="14.0" layoutY="14.0" styleClass="form-title" text="Thêm dịch vụ">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                    </font>
+                                                                </Label>
+                  
+                                                                              <GridPane hgap="10.0" layoutX="13.0" layoutY="40.0" prefHeight="50.0" prefWidth="588.0" vgap="10.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="71.8000244140625" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.00000610351563" minWidth="10.0" prefWidth="166.99996337890624" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="24.600012207031227" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.4000244140625" minWidth="10.0" prefWidth="28.79997558593749" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.39996337890625" minWidth="10.0" prefWidth="43.20002441406251" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="331.19999999999993" minWidth="10.0" prefWidth="203.19997558593747" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Label text="Hành động:" />
+                                                                        <ComboBox fx:id="serviceActionComboBox" prefHeight="38.0" prefWidth="152.0" promptText="Chọn hành động" GridPane.columnIndex="1" />
+                  
+                                                                                              <Label prefHeight="18.0" prefWidth="29.0" text="Log:" GridPane.columnIndex="2" />
+                                                                        <CheckBox fx:id="serviceLogCheckbox" GridPane.columnIndex="3" />
+                  
+                                                                                              <Label text="Dịch vụ:" GridPane.columnIndex="4" />
+                                                                        <TextField fx:id="serviceNameField" prefHeight="30.0" prefWidth="287.0" promptText="Nhập tên dịch vụ" GridPane.columnIndex="5" />
+                                                                    </children>
+                                                                </GridPane>
+                  
+                                                                              <Button fx:id="addServiceButton" layoutX="487.0" layoutY="98.0" mnemonicParsing="false" onAction="#addServiceRule" styleClass="action-button" text="Thêm dịch vụ">
+                                                                    <graphic>
+                                                                        <FontAwesomeIcon glyphName="PLUS" />
+                                                                    </graphic>
+                                                                </Button>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <!-- Add this inside the table_quytac AnchorPane -->
+                                        <AnchorPane fx:id="table_quytac" layoutX="14.0" layoutY="14.0" prefHeight="550.8000000000001" prefWidth="774.6" style="-fx-background-color: #f4f4f4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" spacing="10.0">
+                                                    <children>
+                                                        <Label styleClass="section-title" text="Quản lý Quy tắc Tường lửa">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <Button fx:id="addRuleButton" mnemonicParsing="false" onAction="#addNewRuleButtonClicked" styleClass="action-button" text="Thêm mới">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="PLUS" />
+                                                            </graphic>
+                                                        </Button>
+                                                        <Button fx:id="reloadButton" mnemonicParsing="false" onAction="#reloadFirewall" styleClass="action-button" text="Làm mới">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="REFRESH" />
+                                                            </graphic>
+                                                        </Button>
+                                                        <Button fx:id="backupButton" mnemonicParsing="false" onAction="#backupRules" styleClass="action-button" text="Backup">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="SAVE" />
+                                                            </graphic>
+                                                        </Button>
+                                                        <Button fx:id="restoreButton" mnemonicParsing="false" onAction="#restoreRules" styleClass="action-button" text="Restore">
+                                                            <graphic>
+                                                                <FontAwesomeIcon glyphName="UPLOAD" />
+                                                            </graphic>
+                                                        </Button>
+                                                    </children>
+                                                </HBox>
+                        
+                                                <TableView fx:id="port_table" layoutX="14.0" layoutY="60.0" prefHeight="234.0" prefWidth="748.0" styleClass="rule-table">
+                                                    <columns>
+                                                        <TableColumn fx:id="colRuleNumber" prefWidth="43.99996757507324" text="STT" />
+                                                        <TableColumn fx:id="colTo" prefWidth="256.0000228881836" text="To" />
+                                                        <TableColumn fx:id="colRuleAction" prefWidth="150.0" text="Action" />
+                                                        <TableColumn fx:id="colFrom" prefWidth="188.79995727539062" text="From" />
+                                                        <TableColumn fx:id="colDelete" prefWidth="90.4000244140625" text="Thao tác" />
+                                                    </columns>
+                                                </TableView>
+                        
+                                                <AnchorPane fx:id="ruleFormPane" layoutX="15.0" layoutY="307.0" prefHeight="213.0" prefWidth="744.0" styleClass="rule-form">
+                                                    <children>
+                                                        <Label fx:id="formTitleLabel" layoutX="14.0" layoutY="14.0" styleClass="form-title" text="Thêm quy tắc mới">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                        
+                                                        <!-- Thay thế phần GridPane trong ruleFormPane với GridPane mới này -->
+                                                        <GridPane hgap="10.0" layoutX="13.0" layoutY="40.0" prefHeight="134.0" prefWidth="691.0" vgap="10.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="120.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="120.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints maxHeight="34.19998779296875" minHeight="10.0" prefHeight="31.00001220703125" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="30.19998779296874" minHeight="10.0" prefHeight="22.19998779296875" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="38.199987792968756" minHeight="4.799999999999997" prefHeight="23.600048828124997" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label text="Hành động:" />
+                                                                <ComboBox fx:id="actionComboBox" prefWidth="200.0" promptText="Chọn hành động" GridPane.columnIndex="1" />
+        
+                                                                <Label text="Ghi log:" GridPane.columnIndex="2" />
+                                                                <CheckBox fx:id="logCheckbox" GridPane.columnIndex="3" />
+        
+                                                                <Label text="Cổng:" GridPane.rowIndex="1" />
+                                                                <TextField fx:id="servicePortField" promptText="Nhập cổng" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+                                                                <Label text="Giao thức:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                <ComboBox fx:id="protocolComboBox" prefWidth="200.0" promptText="Chọn giao thức" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        
+                                                                <Label text="IP nguồn:" GridPane.rowIndex="2" />
+                                                                <TextField fx:id="sourceIPField" promptText="Nhập IP nguồn (hoặc any)" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+                                                                <Label text="IP đích:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                <TextField fx:id="destIPField" promptText="Nhập IP đích (hoặc any)" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                            </children>
+                                                        </GridPane>
+                                                        <Button fx:id="cancelButton" layoutX="559.0" layoutY="172.0" mnemonicParsing="false" onAction="#clearRuleForm" prefHeight="29.0" prefWidth="62.0" styleClass="cancel-button" text="Hủy" />
+                                                        <Button fx:id="saveButton" layoutX="648.0" layoutY="172.0" mnemonicParsing="false" onAction="#saveRule" prefHeight="30.0" prefWidth="64.0" styleClass="save-button" text="Lưu" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="overviewPane" layoutX="170.4" layoutY="28.8" prefHeight="593.0" prefWidth="775.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+                    <children>
+                        <AnchorPane layoutX="14.0" layoutY="25.0" prefHeight="50.0" prefWidth="758.0" styleClass="card3" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.799999999999955" AnchorPane.topAnchor="25.0">
+                            <children>
+                                <Label layoutX="283.0" layoutY="10.0" prefHeight="20.0" prefWidth="178.0" text="Overview System" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="395.0" layoutY="100.0" prefHeight="186.0" prefWidth="366.0" styleClass="card" stylesheets="@dashboard.css">
+                            <children>
+                                <Label layoutX="10.0" layoutY="8.0" text="Usage">
+                                    <font>
+                                        <Font name="System Bold" size="19.0" />
+                                    </font>
+                                </Label>
+                                <ProgressBar fx:id="cpuProgress" layoutX="66.0" layoutY="48.0" prefHeight="18.0" prefWidth="158.0" progress="0.0" />
+                                <Label fx:id="healthStatus1" layoutX="10.0" layoutY="48.0" text="CPU:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <ProgressBar fx:id="memoryProgress" layoutX="65.0" layoutY="93.0" prefWidth="158.0" progress="0.0" />
+                                <Label fx:id="healthStatus11" layoutX="7.0" layoutY="93.0" text="Memory:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="cpuUsage" layoutX="240.0" layoutY="48.0" prefHeight="19.0" prefWidth="104.0" text="0% of 1 CPU">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="memoryUsage" layoutX="239.0" layoutY="92.0" prefHeight="19.0" prefWidth="104.0" text="0% of 1 CPU">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="259.99993896484375" endY="-1.52587890625E-5" layoutX="76.0" layoutY="75.0" opacity="0.4" startX="-67.39999389648438" startY="-1.52587890625E-5" />
+                                <Line endX="254.99993896484375" endY="-1.52587890625E-5" layoutX="84.0" layoutY="120.0" opacity="0.4" startX="-76.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="healthStatus111" layoutX="6.0" layoutY="130.0" text="Disk:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="254.99993896484375" endY="-1.52587890625E-5" layoutX="83.0" layoutY="157.0" opacity="0.4" startX="-76.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="diskUsage" layoutX="66.0" layoutY="130.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="13.0" layoutY="100.0" prefHeight="186.0" prefWidth="366.0" styleClass="card" stylesheets="@dashboard.css">
+                            <children>
+                                <Label layoutX="6.0" layoutY="6.0" text="System Information">
+                                    <font>
+                                        <Font name="System Bold" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="healthStatus12" layoutX="14.0" layoutY="45.0" text="Model:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="211.80001831054688" endY="-1.52587890625E-5" layoutX="130.0" layoutY="73.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label layoutX="14.0" layoutY="88.0" text="Machine ID:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="210.20004272460938" endY="-1.52587890625E-5" layoutX="130.0" layoutY="116.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="healthStatus1211" layoutX="14.0" layoutY="130.0" text="Uptime:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="211.00003051757812" layoutX="130.0" layoutY="158.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="modelInfo" layoutX="95.0" layoutY="45.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="machineId" layoutX="95.0" layoutY="88.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="uptime" layoutX="95.0" layoutY="130.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="308.0" prefHeight="268.0" prefWidth="366.0" styleClass="card" stylesheets="@dashboard.css">
+                            <children>
+                                <Label layoutX="14.0" layoutY="4.0" text="Configuration">
+                                    <font>
+                                        <Font name="System Bold" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="40.0" text="Hostname:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="243.60000610351562" layoutX="130.0" layoutY="61.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="hostname" layoutX="139.0" layoutY="40.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="72.0" text="System time:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="244.39999389648438" endY="-3.0517578125E-5" layoutX="130.0" layoutY="93.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="systemTime" layoutX="139.0" layoutY="72.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="15.0" layoutY="103.0" text="Performance profile:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="244.60000610351562" endY="-3.0517578125E-5" layoutX="129.0" layoutY="124.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="performanceProfile" layoutX="138.0" layoutY="103.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="130.0" text="Time zone:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="244.39999389648438" endY="-3.0517578125E-5" layoutX="130.0" layoutY="151.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="timeZone" layoutX="139.0" layoutY="130.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="155.0" text="OS version:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="244.39999389648438" layoutX="130.0" layoutY="176.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="osVersion" layoutX="139.0" layoutY="155.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="182.0" text="Kernel version: ">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="242.80001831054688" layoutX="130.0" layoutY="203.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="kernelVersion" layoutX="139.0" layoutY="182.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="17.0" layoutY="211.0" text="Last update:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="241.00003051757812" layoutX="131.0" layoutY="232.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="lastUpdate" layoutX="140.0" layoutY="211.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <!-- Add this after the Configuration card in the overview section -->
+                        <AnchorPane layoutX="426.0" layoutY="308.0" prefHeight="268.0" prefWidth="338.0" styleClass="card" stylesheets="@dashboard.css">
+                            <children>
+                                <Label layoutX="14.0" layoutY="4.0" text="Network Interfaces">
+                                    <font>
+                                        <Font name="System Bold" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="40.0" text="Interface:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="146.00003051757812" layoutX="130.0" layoutY="61.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="networkInterface" layoutX="139.0" layoutY="40.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="72.0" text="IP Address:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="148.39999389648438" layoutX="130.0" layoutY="93.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="ipAddress" layoutX="139.0" layoutY="72.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="15.0" layoutY="103.0" text="MAC Address:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="150.20004272460938" layoutX="129.0" layoutY="124.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="macAddress" layoutX="139.0" layoutY="103.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="130.0" text="Gateway:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="142.80001831054688" layoutX="130.0" layoutY="151.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="gateway" layoutX="139.0" layoutY="130.0" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="158.0" text="DNS:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="145.7999267578125" layoutX="130.0" layoutY="179.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="dnsServer" layoutX="139.0" layoutY="158.0" styleClass="network-info-value" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="16.0" layoutY="187.0" text="Link Status:">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="148.199951171875" endY="-3.0517578125E-5" layoutX="130.0" layoutY="208.0" opacity="0.4" startX="-114.99996948242188" startY="-1.52587890625E-5" />
+                                <Label fx:id="linkStatus" layoutX="139.0" layoutY="187.0" styleClass="link-up" text="N/A">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="userManagementPane" layoutX="170.4" layoutY="32.0" prefHeight="593.0" prefWidth="775.0" visible="false" AnchorPane.bottomAnchor="32.799999999999955" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                    <VBox spacing="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Quản lý tài khoản người dùng" />
+                            <Region HBox.hgrow="ALWAYS" />
+                        </HBox>
+     
+                        <!-- Create User Form -->
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <TextField fx:id="newUsernameField" promptText="Tên người dùng" />
+                            <PasswordField fx:id="newPasswordField" promptText="Mật khẩu" />
+                            <Button fx:id="saveNewUserButton" onAction="#clearCreateUserForm" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Clear" />
+                            <Button fx:id="createUserButton" onAction="#createNewUser" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Tạo tài khoản mới" />
+                        </HBox>
+     
+                        <!-- User Cards -->
+                        <ScrollPane fitToWidth="true" prefWidth="735.0" VBox.vgrow="ALWAYS">
+                            <FlowPane fx:id="userCardsPane" hgap="20" vgap="20" />
+                        </ScrollPane>
+                    </VBox>
+ 
+                    <!-- Edit User Pane -->
+                    <AnchorPane fx:id="editUserPane" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                        <VBox alignment="CENTER" layoutX="100.0" layoutY="188.0" maxHeight="400" spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="188.0">
+                            <Label fx:id="editingUserLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+         
+                            <HBox alignment="CENTER" spacing="10">
+                                <Label text="Mật khẩu mới:" />
+                                <PasswordField fx:id="changePasswordField" HBox.hgrow="ALWAYS" />
+                            </HBox>
+         
+                            <CheckBox fx:id="sudoAccessCheckbox" text="Cấp quyền sudo" />
+         
+                            <HBox alignment="CENTER" spacing="10">
+                                <Button fx:id="saveUserChangesButton" onAction="#saveUserChanges" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Lưu thay đổi" />
+                                <Button fx:id="deleteUserButton" onAction="#deleteUser" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Xóa người dùng" />
+                                <Button onAction="#cancelUserEdit" text="Hủy" />
+                            </HBox>
+                        </VBox>
+                    </AnchorPane>
+                </AnchorPane>
+                <AnchorPane fx:id="logsPane" layoutX="170.0" layoutY="34.0" prefHeight="593.0" prefWidth="775.0" visible="false" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0">
+                    <children>
+                        <HBox prefHeight="40.0" prefWidth="200.0" />
+                        <Label layoutX="14.0" layoutY="14.0" styleClass="section-title" stylesheets="@dashboard.css" text="Logs Firewall">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        
+                              
+                        <!-- Add the logging checkbox -->
+                        <CheckBox fx:id="loggingCheckbox" layoutX="171.0" layoutY="17.0" onAction="#toggleLogging" styleClass="logging-checkbox" text="Bật/tắt ghi log" />
+                        
+                        <!-- Thay đổi phần thanh tìm kiếm và bộ lọc -->
+                        <HBox layoutX="13.0" layoutY="48.0" prefHeight="40.0" prefWidth="748.0" spacing="10.0">
+                            <children>
+                                <TextField fx:id="searchLogsField" prefHeight="49.0" prefWidth="250.0" promptText="Tìm kiếm (theo IP nguồn, đích) ...." styleClass="search-field" />
+                                <!-- Change these ComboBox definitions -->
+                                <ComboBox fx:id="actionFilterComboBox" prefHeight="18.0" prefWidth="150.0" promptText="Hành động" styleClass="filter-combo-box" />
+                                <ComboBox fx:id="protocolFilterComboBox" prefHeight="5.0" prefWidth="150.0" promptText="Giao thức" styleClass="filter-combo-box" />
+                                <Button fx:id="refreshButton" mnemonicParsing="false" prefHeight="1.0" prefWidth="66.0" styleClass="refresh-button" text="Làm mới" />
+                                <Button fx:id="exportButton" mnemonicParsing="false" prefHeight="11.0" prefWidth="70.0" styleClass="export-button" text="Xuất logs" />
+                            </children>
+                        </HBox>
+        
+                        <!-- Bảng logs -->
+                        <TableView fx:id="logsTable" layoutX="8.0" layoutY="98.0" prefHeight="434.0" prefWidth="758.0" styleClass="card" stylesheets="@dashboard.css">
+                            <columns>
+                                <TableColumn fx:id="timeColumn" prefWidth="89.60001945495605" text="Thời gian" />
+                                <TableColumn fx:id="actionColumn" minWidth="0.0" prefWidth="74.40003204345703" text="Hành động" />
+                                <TableColumn fx:id="sourceIPColumn" prefWidth="105.60003662109375" text="IP nguồn" />
+                                <TableColumn fx:id="destIPColumn" prefWidth="112.0" text="IP đích" />
+                                <TableColumn fx:id="protocolColumn" minWidth="0.0" prefWidth="72.0" text="Giao thức" />
+                                <TableColumn fx:id="sourcePortColumn" prefWidth="81.59994506835938" text="Cổng nguồn" />
+                                <TableColumn fx:id="destPortColumn" minWidth="0.0" prefWidth="64.800048828125" text="Cổng đích" />
+                                <TableColumn fx:id="directionColumn" minWidth="0.0" prefWidth="60.7999267578125" text="Chiều" />
+                                <TableColumn fx:id="detailsColumn" prefWidth="57.5999755859375" text="Chi tiết" />
+                            </columns>
+                        </TableView>
+                        
+                        <HBox alignment="CENTER_RIGHT" layoutX="14.0" layoutY="510.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0">
+                            <children>
+                                
+                                <!-- Thêm phần chú thích màu sắc dưới bảng logs -->
+                                <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="221.0" spacing="15.0">
+                                    <children>
+                                        <HBox alignment="CENTER" spacing="5.0">
+                                            <Circle fill="red" radius="6" />
+                                            <Label style="-fx-text-fill: red; -fx-font-weight: bold;" text="BLOCK" />
+                                        </HBox>
+                                        <HBox alignment="CENTER" spacing="5.0">
+                                            <Circle fill="green" radius="6" />
+                                            <Label style="-fx-text-fill: green; -fx-font-weight: bold;" text="ALLOW" />
+                                        </HBox>
+                                        <HBox alignment="CENTER" spacing="5.0">
+                                            <Circle fill="#FFD700" radius="6" />
+                                            <Label style="-fx-text-fill: #FFD700; -fx-font-weight: bold;" text="AUDIT" />
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                                
+                                <Label text="Dòng/trang:" />
+                                <ComboBox fx:id="rowsPerPageComboBox" prefWidth="70.0" />
+                                <Label text="Trang:" />
+                                <Button fx:id="prevPageButton" mnemonicParsing="false" styleClass="page-button" text="&lt;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <ComboBox fx:id="pageComboBox" prefWidth="70.0" />
+                                <Button fx:id="nextPageButton" mnemonicParsing="false" styleClass="page-button" text="&gt;">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <Label text="Tổng số:" />
+                                <Label fx:id="totalRowsLabel" text="0" />
+                            </children>
+                        </HBox>
+        
+                        <!--                         Phân trang 
+                        <HBox alignment="CENTER_RIGHT" layoutX="14.0" layoutY="537.0" prefHeight="40.0" prefWidth="748.0" spacing="10.0">
+                            <children>
+              
+                                
+                                <Label text="Trang:" />
+                                <ComboBox fx:id="pageComboBox" prefHeight="25.0" prefWidth="60.0" />
+                                <Button fx:id="prevPageButton" prefHeight="25.0" prefWidth="30.0" text="&lt;" />
+                                <Button fx:id="nextPageButton" prefHeight="25.0" prefWidth="30.0" text="&gt;" />
+                                <Label text="Số dòng:" />
+                                <ComboBox fx:id="rowsPerPageComboBox" prefHeight="25.0" prefWidth="60.0" />
+                            </children>
+                        </HBox>-->
+                    </children>
+                </AnchorPane>
+                <!-- Thêm AnchorPane cho Terminal vào sau các AnchorPane khác -->
+                <AnchorPane fx:id="terminalPane" layoutX="171.0" layoutY="29.0" prefHeight="593.0" prefWidth="774.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+                    <children>
+                        <VBox spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <Label styleClass="section-title" text="Terminal SSH">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Label>
+                            <TextArea fx:id="terminalOutput" editable="false" prefHeight="500.0" style="-fx-font-family: 'Courier New'; -fx-font-size: 14px; -fx-text-fill: white; -fx-control-inner-background: #000000;" styleClass="terminal-output" wrapText="true" />
+                            <HBox spacing="10">
+                                <TextField fx:id="commandInput" onAction="#sendCommand" promptText="Nhập lệnh tại đây..." HBox.hgrow="ALWAYS" />
+                                <Button fx:id="sendButton" onAction="#sendCommand" styleClass="action-button" text="Gửi" />
+                                <Button fx:id="clearButton" onAction="#clearTerminal" styleClass="action-button" text="Xóa" />
+                            </HBox>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="updateNotificationPane1" layoutX="170.0" layoutY="34.0" prefHeight="593.0" prefWidth="774.0" visible="false">
+                    <children>
+                        <VBox alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+                            <children>
+                                <FontAwesomeIcon fill="#3399ff" glyphName="REFRESH" size="8em" />
+                                <Label styleClass="section-title" text="Chức năng &quot;Dịch vụ thịnh hành&quot; đang được cập nhật">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Chúng tôi đang làm việc để bổ sung và hoàn thiện tính năng này." textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="updateDetailsTextArea1" editable="false" prefHeight="200.0" styleClass="update-details" wrapText="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextArea>
+                                <Button fx:id="backButton1" onAction="#handleBackButton" styleClass="action-button" text="Quay lại">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="ARROW_LEFT" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <!-- Thêm AnchorPane thông báo chức năng đang cập nhật -->
+                <AnchorPane fx:id="updateNotificationPane" layoutX="171.0" layoutY="29.0" prefHeight="593.0" prefWidth="774.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+                            <FontAwesomeIcon fill="#3399ff" glyphName="REFRESH" size="8em" />
+                            <Label styleClass="section-title" text="Chức năng &quot;Quản lý dịch vụ&quot;  đang được cập nhật">
+                                <font>
+                                    <Font name="System Bold" size="24.0" />
+                                </font>
+                            </Label>
+                            <Label text="Chúng tôi đang làm việc để bổ sung và hoàn thiện tính năng này." textAlignment="CENTER" wrapText="true">
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+                            <TextArea fx:id="updateDetailsTextArea" editable="false" prefHeight="200.0" styleClass="update-details" wrapText="true">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </TextArea>
+                            <Button fx:id="backButton" onAction="#handleBackButton" styleClass="action-button" text="Quay lại">
+                                <graphic>
+                                    <FontAwesomeIcon glyphName="ARROW_LEFT" />
+                                </graphic>
+                            </Button>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="updateNotificationPane2" layoutX="170.0" layoutY="34.0" prefHeight="593.0" prefWidth="774.0" visible="false">
+                    <children>
+                        <VBox alignment="CENTER" spacing="20" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+                            <children>
+                                <FontAwesomeIcon fill="#3399ff" glyphName="REFRESH" size="8em" />
+                                <Label styleClass="section-title" text="Chức năng &quot;Logs Service&quot;  đang được cập nhật">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Chúng tôi đang làm việc để bổ sung và hoàn thiện tính năng này." textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="updateDetailsTextArea2" editable="false" prefHeight="200.0" styleClass="update-details" wrapText="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextArea>
+                                <Button fx:id="backButton2" onAction="#handleBackButton" styleClass="action-button" text="Quay lại">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="ARROW_LEFT" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
